@@ -1,66 +1,40 @@
-Customer Churn Prediction
-This project focuses on predicting customer churn for a telecom company using machine learning. The goal is to identify customers who are likely to churn (leave) the service, enabling the company to take proactive measures to retain them.
+Telecom Customer Churn Prediction
+Project Overview
+This project focuses on predicting customer churn for a telecom company using machine learning. The goal is to identify customers who are likely to leave the service so that the company can take proactive measures to retain them.
 
-Table of Contents
-Problem Statement
+Key Steps
+Data Cleaning & Preprocessing: Handled missing values, converted categorical variables, and scaled numerical features.
 
-Dataset
+Exploratory Data Analysis (EDA): Analyzed the distribution of churn and relationships between features.
 
-Approach
+Feature Engineering: Created new features like TotalServices and AverageMonthlySpend.
 
-Results
+Model Building: Trained and evaluated Logistic Regression, Random Forest, XGBoost, and an Ensemble Model.
 
-Technologies Used
+Hyperparameter Tuning: Used RandomizedSearchCV to optimize model performance.
 
-How to Use
+Model Evaluation: Achieved 84.3% accuracy with the Ensemble Model.
 
-Future Work
+Model Deployment: Saved the best model for future use.
 
-Problem Statement
-Customer churn is a critical issue for businesses, as retaining existing customers is often more cost-effective than acquiring new ones. This project aims to predict customer churn using historical data and provide actionable insights to reduce churn rates.
+Tools & Technologies
+Python
 
-Dataset
-The dataset used is the Telco Customer Churn Dataset from IBM. It contains information about:
+Pandas, NumPy, Matplotlib, Seaborn
 
-Customer demographics (e.g., gender, age, partner, dependents).
+Scikit-learn, XGBoost, SMOTE
 
-Services signed up for (e.g., phone, internet, online security).
-
-Account information (e.g., tenure, contract type, payment method).
-
-Target variable: Churn (Yes/No).
-
-Approach
-Data Preprocessing:
-
-Handled missing values and encoded categorical variables.
-
-Performed feature engineering (e.g., created tenure groups, monthly-to-total charges ratio).
-
-Exploratory Data Analysis (EDA):
-
-Visualized key trends and correlations.
-
-Analyzed the distribution of churned vs. non-churned customers.
-
-Model Building:
-
-Trained and evaluated multiple models, including Balanced Random Forest, EasyEnsemble, and XGBoost.
-
-Selected XGBoost as the best model due to its high accuracy (78%) and balanced precision-recall trade-off.
+Joblib (for model saving)
 
 Results
-Best Model: XGBoost achieved an accuracy of 78%, a precision of 56%, and a recall of 70% for churn prediction.
+Best Model: Ensemble Model (VotingClassifier)
 
-Key Insights:
+Accuracy: 84.3%
 
-Customers with longer tenure and two-year contracts are less likely to churn.
+Precision: 83.96%
 
-Customers with fiber optic internet and higher monthly charges are more likely to churn.
+Recall: 85.32%
 
-Technologies Used
-Programming Language: Python
+F1-Score: 84.63%
 
-Libraries: Pandas, NumPy, Scikit-learn, XGBoost, Matplotlib, Seaborn.
-
-Tools: Jupyter Notebook, Git.
+ROC-AUC: 84.29%
