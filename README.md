@@ -12,9 +12,10 @@ This project predicts customer churn for a telecommunications company using mach
 5. [Model Training and Evaluation](#model-training-and-evaluation)
 6. [Hyperparameter Tuning](#hyperparameter-tuning)
 7. [Ensemble Modeling](#ensemble-modeling)
-8. [Model Deployment](#model-deployment)
-9. [Contributing](#contributing)
-10. [License](#license)
+8. [Results](#results)
+9. [Model Deployment](#model-deployment)
+10. [Contributing](#contributing)
+11. [License](#license)
 
 ---
 
@@ -146,6 +147,30 @@ The dataset used is the **Telco Customer Churn Dataset** from Kaggle. It contain
 
 ---
 
+## Results
+### What You Did
+- **Data Preprocessing**: Cleaned the dataset by handling missing values, encoding categorical variables, and creating new features like `TotalServices` and `AverageMonthlySpend`.
+- **Exploratory Data Analysis (EDA)**: Analyzed the dataset to understand the distribution of churn, numerical features, and correlations between variables.
+- **Model Training**: Trained three baseline models: **Logistic Regression**, **Random Forest**, and **XGBoost**.
+- **Hyperparameter Tuning**: Used **RandomizedSearchCV** to optimize hyperparameters for Random Forest and XGBoost.
+- **Ensemble Modeling**: Combined the best-performing models into a **Voting Classifier** to improve prediction accuracy.
+- **Model Evaluation**: Evaluated models using metrics like accuracy, precision, recall, F1-score, and ROC-AUC.
+
+### Why You Did It
+- **Business Problem**: Customer churn is a critical issue for telecom companies. Predicting churn helps businesses take proactive measures to retain customers.
+- **Model Performance**: By experimenting with multiple models and ensembling, we aimed to achieve the highest possible accuracy and robustness.
+- **Explainability**: Feature engineering and EDA helped identify key drivers of churn, making the model interpretable for stakeholders.
+
+### What Were the Results
+- **Best Model**: The **Ensemble Model (Voting Classifier)** achieved the highest accuracy of **84.30%** and an ROC-AUC score of **84.29%**.
+- **Cross-Validation**: The ensemble model demonstrated consistent performance with a cross-validation accuracy of **83.57%**.
+- **Key Insights**:
+  - Customers with higher `MonthlyCharges` and lower `tenure` are more likely to churn.
+  - The `Contract` type (month-to-month vs. long-term) is a significant predictor of churn.
+- **Deployment**: The final model was saved as `final_churn_ensemble_model.pkl` for deployment in production environments.
+
+---
+
 ## Model Deployment
 The final ensemble model is saved as `final_churn_ensemble_model.pkl` for deployment. It can be used in production environments to predict customer churn.
 
@@ -168,5 +193,3 @@ Contributions to this project are welcome! If you have any improvements or sugge
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-
